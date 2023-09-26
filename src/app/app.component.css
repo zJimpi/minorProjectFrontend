@@ -1,0 +1,59 @@
+li{
+    list-style: none;
+    text-align: left;
+}
+.custom-blue{
+    /* background-color: #076B83ff; */
+    background-color: none;
+    background-image: url('home/assets/seabeach.jpg');
+    background-size: auto;
+    background-position-y:top;
+   
+}
+
+
+.footer{
+    background-color: #076B83ff;
+    color: #FFFFFFff ;
+
+    position: re;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.sub-sub-title{
+    text-align: left;
+}
+.footer-subtitle{
+    text-align: left;
+}
+.tech{
+    text-align: center;
+    padding: 20px;
+}
+.tech-used{
+    margin: 20px;
+    justify-content: center;
+}
+
+.tech-used col{
+    margin: 20px;
+}
+.minorP{
+    text-align: center;
+    margin: 20px;
+}
+.col{
+    margin: 10px;
+}
+.col-md-3{
+    margin: 10px;
+    justify-content: space-evenly;
+}
+
+.github__links a{
+    color: #FFFFFFff;
+    padding: 10px;
+
+}

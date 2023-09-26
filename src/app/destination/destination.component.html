@@ -1,0 +1,194 @@
+<div class="hero">
+    <div class="container">
+        <div class="row row-cols-1 img__box">
+            <div class="col"><h1 class="home__tittle">Discover by Destination</h1></div>
+            
+           
+        </div>
+        <div class="row search__row">
+
+            <div class="col search__col">
+
+                <form #form="ngForm">
+                    <label for="dropdown" class="search_title col">SEARCH BY :</label>
+                    <select class="col"  id="dropdown" name="selectedOption" [(ngModel)]="selectedOption">
+                        <option value="State & Union Teratories">State & Union Teratories</option>
+                        <option value="Relegious places">Relegious places</option>
+                        <option value="Mountains">Mountains</option>
+                        <option value="Sea Beaches">Sea Beaches</option>
+                        <option value="Forest">Forest</option>
+                        <option value="Heritage">Heritage</option>
+                    </select>
+                    <i class="bi bi-caret-down-fill dropdown__icon col"></i>
+                    <button type="button" (click)="onSubmit()" class="search__submit-btn">Submit</button>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="places">
+    <div class="container">
+        <div class="row search-title">
+            <!-- name changes as the dorop down selects -->
+            <h1 class="search__title-title" id="searched__title">{{ selectedOption }}</h1>
+        </div>
+        <div class="row search-content ">
+
+            <div class="col-md-3 names">
+                <h5 class="state-sub-title">States</h5>
+                <div class="row state-names overflow-scroll ">
+                    
+                    <div class="state-name-list ">
+                        <li>Andhra Pradesh</li>
+                        <li>Arunachal Pradesh</li>
+                        <li>Assam</li>
+                        <li>Bihar</li>
+                        <li>Chhattisgarh</li>
+                        <li>Goa</li>
+                        <li>Gujarat</li>
+
+                        <li>Haryana</li>
+                        <li>Himachal Pradesh</li>
+                        <li>Jammu and Kashmir</li>
+                        <li>Jharkhand</li>
+                        <li>Karnataka</li>
+                        <li>Kerala</li>
+                        <li>Madhya Pradesh</li>
+                        <li>Maharashtra</li>
+
+                        <li>Manipur</li>
+                        <li>Meghalaya</li>
+                        <li>Mizoram</li>
+                        <li>Nagaland</li>
+                        <li>Orissa</li>
+                        <li>Punjab</li>
+                        <li>Rajasthan</li>
+
+                        <li>Sikkim</li>
+                        <li>Tamil Nadu</li>
+                        <li>Telangana</li>
+                        <li>Tripura</li>
+                        <li>Uttarakhand</li>
+                        <li>Uttar Pradesh</li>
+                        <li>West Bengal</li>
+                    </div>
+                    
+                </div>
+                <div class="row ut-names">
+                    <h5 class="ut-sub-title">Union teratories</h5>
+                    <div class="ut-name-list">
+                        <li>Andaman and Nicobar Islands</li>
+                        <li>Dadra and Nagar Haveli</li>
+                        <li>Daman and Diu</li>
+                        <li>Delhi</li>
+                        <li>Lakshadweep</li>
+                        <li>Pondicherry</li>
+                        <li>Chandigarh</li>
+                    </div>
+                </div>
+                
+
+            </div>
+            <!-- =========images and desc from backend ============ -->
+            <div class="col-md-8 state-cards">
+                <!--============ mock=========== -->
+
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                      <div class="card h-100">
+                        <div class="card-img-top img_des1"></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stars">
+                                <i class="bi bi-star-fill star__color"></i>
+                                <i class="bi bi-star-fill star__color"></i>
+                                <i class="bi bi-star-fill star__color"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <div class="card-img-top img_des1"></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a short card.</p>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="stars">
+                                <i class="bi bi-star-fill star__color"></i>
+                                <i class="bi bi-star-fill star__color"></i>
+                                <i class="bi bi-star-fill star__color"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <div class="card-img-top img_des1"></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="stars">
+                                <i class="bi bi-star-fill star__color"></i>
+                                <i class="bi bi-star-fill star__color"></i>
+                                <i class="bi bi-star-fill star__color"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <!-- <div class="col">
+                      <div class="card h-100">
+                        <div class="card-img-top img_des1"></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="stars">
+                                <i class="bi bi-star-fill star__color"></i>
+                                <i class="bi bi-star-fill star__color"></i>
+                                <i class="bi bi-star-fill star__color"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+
+
+                      </div>
+                    </div> -->
+
+
+                  </div>
+
+
+                <!--============ mock=========== -->
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,242 @@
+
+.hero col{
+    width: 100%;
+
+}
+
+
+
+.hero{
+    /* height: 1080px; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 80px;
+
+
+    background-image: url('asset/lake.jpg');
+    background-size: cover;
+    background-position: center;
+   
+    min-height: 90vh; /* Use min-height to ensure full coverage */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    overflow: hidden; /* Hide any overflowing content */
+}
+.home__tittle{
+    /* font-size: 100px;  good for small device*/
+    font-size: 150px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: #FCEFE5ff;
+    margin-top: 12%;
+    
+    
+}
+.home__subtitle{
+    text-align: center;
+    color: #FCEFE5ff;
+}
+
+/* ====================state name col =================*/
+
+.places{
+    margin: 0% 0% 10% 0%;
+}
+
+.names{
+    list-style: none;
+    background-color: rgb(160, 158, 158);
+    border-radius: 1rem;
+    padding: 1rem ;
+    
+    /* for smaller sevic
+    height: 460px;  */
+
+    height: 490px;
+    overflow: hidden;
+
+}
+
+.state-name-list{
+    padding-left: 40px;
+}
+.ut-name-list{
+    padding-left: 40px; 
+}
+.state-names{
+    margin-bottom: 5%;
+/*================ scrollable list ================*/
+ height: 38%;
+
+ overflow-x: hidden;
+
+}
+
+.search__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.search__title-title{
+
+    text-align: center;
+
+    font-size: 60px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: black;
+    margin: 5%;
+    
+}
+.state-cards{
+    margin-left: 5%;
+}
+.state-sub-title{
+    margin-top: 2%;
+}
+
+/* ===================scroll bar ====================*/
+/* width */
+.state-names::-webkit-scrollbar {
+    width: 8px;
+     
+  }
+  
+  /* Handle */
+  .state-names::-webkit-scrollbar-thumb {
+    background: #dfdfdf;
+    border-radius: 10rem;
+  }
+  
+  /* Handle on hover */
+  .state-names::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  /*corner */
+  .state-names::-webkit-scrollbar-corner{
+    visibility: hidden;
+  }
+
+  /* ==================img card stye =====================*/
+
+.star__color{
+    color: orange;
+}
+.card-footer{
+    border: none;
+    background: none;
+    padding: 1rem;
+}
+.img_des1{
+    background-image: url('asset/Hawamahal.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 15rem;
+}
+.img_des2{
+    background-image: url('asset/camelRide.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 15rem;
+}
+.img_des3{
+    background-image: url('asset/arti2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 15rem;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    transition: 1s;
+}
+/* =================search================ */
+.search__submit-btn{
+    visibility: hidden;
+}
+.search__col{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 10%;
+
+    font-size: 45px;
+    padding: 1%;
+  
+}
+.search_title{
+    text-align: center;
+    background-color:#FCEFE5ff;
+    color: #076B83ff;
+    font-weight: 900;
+    border-top-left-radius: 1rem ;
+    border-bottom-left-radius: 1rem ;
+    font-size: 97%;
+    padding: 1%;
+    /* margin-right: .3rem; */
+}
+select{
+    text-align: center;
+    width: 60%;
+
+    background-color:rgba(255, 255, 255, 0.532);
+    padding: 1%;
+    border: none;
+    /* Remove the default browser arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 2.73rem;
+  
+}
+
+.dropdown__icon{
+    border-top-right-radius: 1rem ;
+    border-bottom-right-radius: 1rem ;
+    background-color:rgba(255, 255, 255, 0.532);
+    color: #076B83ff;
+    border: none;
+    
+    font-size: 2.94rem;
+    padding: 1%;
+    
+
+    
+}
+
+.dropdown__icon:hover{
+    color: black;
+}
+
+
+
+/*style the arrow inside the select element:*/
+
+/* ==================card responsive ==================*/
+@media (max-width:767px) {
+    .state-cards{
+        margin-left: 0;
+        margin-top: 5%;
+    }
+    .home__tittle{
+        font-size: 80px;
+    }
+    .search_title{
+        font-size: 2rem;
+        width: 100%;
+        color: black;
+        background-color:rgba(7, 106, 131, 0.597);
+        border-radius: 1rem;
+    }
+    select{
+        font-size: 67%;
+        width: 100%;
+        border-radius: 1rem;
+    }
+    .dropdown__icon{
+        visibility: hidden;
+    }
+}
