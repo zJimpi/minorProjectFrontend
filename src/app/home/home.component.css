@@ -61,11 +61,7 @@
     color: orange;
 }
 
-.card:hover{
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-    transition: 1s;
-}
+
 /* =================image section ============================*/
 
 .popular__img1{
@@ -129,6 +125,12 @@
     border-radius: 1rem;
     padding: 3%;
 }
+.des__title-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    transition: 1s;
+
+}
 
 .btn-bd-primary{
     --bs-btn-color: #FCEFE5ff;
@@ -185,4 +187,15 @@
 
     }
     
+}
+/* ==================animations===================== */
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    transition: 1s;
+}
+.home__tittle:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    transition: 1s;
 }
