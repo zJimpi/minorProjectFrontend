@@ -1,0 +1,28 @@
+.peacock_box{
+    background-image: url('asset/peacock_blue.jpg');
+    background-size: cover;
+    background-position: center;
+    background-position-y: bottom;
+    height: 35rem;
+    border-radius: 1%;
+}
+.conatiner{
+ padding-top: 10%;
+ 
+}
+label, small{
+    color: #FFFFFFff;
+}
+.space{
+height: 20%;
+}
+.btn{
+    margin-top: 25px;
+    width: 100%;
+
+}
+small{
+    text-align: center;
+    position: relative;
+    left: 25%;
+}
