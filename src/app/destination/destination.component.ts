@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { AddDestService } from '../admin/service/add-dest.service';
 
 @Component({
   selector: 'app-destination',
@@ -7,35 +12,53 @@ import { Component } from '@angular/core';
 })
 export class DestinationComponent {
 
-//for search bar
-  selectedOption: string = 'State & Union Teratories'; // Set a default selected option
+  displayedColumns: string[] = [
+    'id',
+    'imageFile',
+    'destName',
+    
+    'imageLocation',
+    'stateAndUT',
+    'destType',
+    
+    'imageDescription',
+    'popularityScore',
+  ];
 
-  liElements: NodeListOf<HTMLLIElement>;
-  liArray: HTMLLIElement[];
-  
-  constructor() {
-    this.liElements = document.querySelectorAll("li");
-    this.liArray = Array.from(this.liElements);
+  dataSource!: MatTableDataSource<any>;
 
-    this.liArray.forEach((li: HTMLLIElement) => {
-      li.addEventListener("click", () => {
-        this.liArray.forEach((item: HTMLLIElement) => {
-          item.classList.remove("selected");
-        });
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  constructor(private _dialog: MatDialog,
+    private _destService: AddDestService,
+    ){}
+    ngOnInit(): void {
+      this.getDestinationList();
+      
+    }
 
-        const selectedValue: any = li.textContent;
-        li.classList.add("selected");
-        console.log("Selected value: " + selectedValue);
-      });
+
+  //show the tables
+  getDestinationList() {
+    this._destService.getDestinationList().subscribe({
+      next: (res) => {
+        this.dataSource = new MatTableDataSource(res);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+      },
+      error: console.log,
     });
   }
 
+  //for seaching by name ..and other feilds
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
 
-  onSubmit() {
-    console.log('Selected Option:', this.selectedOption);
-    // You can perform further actions with the selected option here
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
-//code for selecting state name
   
 }

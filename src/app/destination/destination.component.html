@@ -1,194 +1,98 @@
 <div class="hero">
-    <div class="container">
-        <div class="row row-cols-1 img__box">
-            <div class="col"><h1 class="home__tittle">Discover by Destination</h1></div>
-            
-           
-        </div>
-        <div class="row search__row">
-
-            <div class="col search__col">
-
-                <form #form="ngForm">
-                    <label for="dropdown" class="search_title col">SEARCH BY :</label>
-                    <select class="col"  id="dropdown" name="selectedOption" [(ngModel)]="selectedOption">
-                        <option value="State & Union Teratories">State & Union Teratories</option>
-                        <option value="Relegious places">Relegious places</option>
-                        <option value="Mountains">Mountains</option>
-                        <option value="Sea Beaches">Sea Beaches</option>
-                        <option value="Forest">Forest</option>
-                        <option value="Heritage">Heritage</option>
-                    </select>
-                    <i class="bi bi-caret-down-fill dropdown__icon col"></i>
-                    <button type="button" (click)="onSubmit()" class="search__submit-btn">Submit</button>
-                </form>
-
-            </div>
-            
-
-        </div>
+  <div class="container">
+    <div class="row row-cols-1 img__box">
+      <div class="col"><h1 class="home__tittle">Discover by Destination</h1></div>  
     </div>
-    
+  </div>
 </div>
 
+<!-- ============= card code================ -->
 
-<div class="places">
-    <div class="container">
-        <div class="row search-title">
-            <!-- name changes as the dorop down selects -->
-            <h1 class="search__title-title" id="searched__title">{{ selectedOption }}</h1>
-        </div>
-        <div class="row search-content ">
 
-            <div class="col-md-3 names">
-                <h5 class="state-sub-title">States</h5>
-                <div class="row state-names overflow-scroll ">
-                    
-                    <div class="state-name-list ">
-                        <li>Andhra Pradesh</li>
-                        <li>Arunachal Pradesh</li>
-                        <li>Assam</li>
-                        <li>Bihar</li>
-                        <li>Chhattisgarh</li>
-                        <li>Goa</li>
-                        <li>Gujarat</li>
+<div class="container card-container">
+  <div class="row dest-table">
+    <!-- table -->
 
-                        <li>Haryana</li>
-                        <li>Himachal Pradesh</li>
-                        <li>Jammu and Kashmir</li>
-                        <li>Jharkhand</li>
-                        <li>Karnataka</li>
-                        <li>Kerala</li>
-                        <li>Madhya Pradesh</li>
-                        <li>Maharashtra</li>
+        <div class="main-body">
 
-                        <li>Manipur</li>
-                        <li>Meghalaya</li>
-                        <li>Mizoram</li>
-                        <li>Nagaland</li>
-                        <li>Orissa</li>
-                        <li>Punjab</li>
-                        <li>Rajasthan</li>
-
-                        <li>Sikkim</li>
-                        <li>Tamil Nadu</li>
-                        <li>Telangana</li>
-                        <li>Tripura</li>
-                        <li>Uttarakhand</li>
-                        <li>Uttar Pradesh</li>
-                        <li>West Bengal</li>
-                    </div>
-                    
-                </div>
-                <div class="row ut-names">
-                    <h5 class="ut-sub-title">Union teratories</h5>
-                    <div class="ut-name-list">
-                        <li>Andaman and Nicobar Islands</li>
-                        <li>Dadra and Nagar Haveli</li>
-                        <li>Daman and Diu</li>
-                        <li>Delhi</li>
-                        <li>Lakshadweep</li>
-                        <li>Pondicherry</li>
-                        <li>Chandigarh</li>
-                    </div>
-                </div>
+            <mat-form-field>
+            <mat-label>Filter your Search (eg: Mountain, Assam, Taj Mahal)</mat-label>
+            <input matInput (keyup)="applyFilter($event)"  #input>
+            </mat-form-field>
+        
+            <div class="table-container">
+            <table mat-table [dataSource]="dataSource" matSort class="table-card">
+        
+                <!-- ID Column -->
+                <ng-container matColumnDef="id" class="hide">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide"> ID </th>
+                <td mat-cell *matCellDef="let row" class="hide"> {{row.id}} </td>
+                </ng-container>
                 
+                <!-- image colum -->
+                <ng-container matColumnDef="imageFile">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide">Image File</th>
+                    <td mat-cell *matCellDef="let row" class="card-start">
+                      <ng-container *ngIf="row.imageFile">
+                          {{ row.imageFile.name }}
+                      </ng-container>
+                      <ng-container *ngIf="!row.imageFile">
+                          No image added
+                      </ng-container>
+                    </td>
+                </ng-container>
+              
+                <!-- .... -->
+        
+                <!-- Destiantion  -->
+                <ng-container matColumnDef="destName" >
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide"> Destination Name </th>
+                <td mat-cell *matCellDef="let row" class="card-box-start"> <h5><b>{{row.destName}}</b></h5> </td>
+                </ng-container>
+        
 
+        
+                <ng-container matColumnDef="imageLocation">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide"> Location </th>
+                <td mat-cell *matCellDef="let row" class="card-box"> <h6>LOCATION: {{row.imageLocation}}</h6></td>
+                </ng-container>
+        
+                <ng-container matColumnDef="stateAndUT">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide"> state And UT </th>
+                <td mat-cell *matCellDef="let row" class="card-box"> <h6>STATE: {{row.stateAndUT}}</h6></td>
+                </ng-container>
+
+                <ng-container matColumnDef="destType">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide"> Destination Type </th>
+                  <td mat-cell *matCellDef="let row" class="card-box"><h6>TYPE: {{row.destType}}</h6></td>
+                </ng-container>
+
+
+        
+                <ng-container matColumnDef="imageDescription">
+                <th mat-header-cell *matHeaderCellDef class="hide">Description </th>
+                <td mat-cell *matCellDef="let row" class="card-box" height="150px" >DESCRIPTION: {{row.imageDescription}}</td>
+                </ng-container>
+        
+                <ng-container matColumnDef="popularityScore">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide"> Rating </th>
+                  <td mat-cell *matCellDef="let row" class="card-end"> RATING: {{row.popularityScore}}  out of 5</td>
+                </ng-container>
+
+        
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+            </table>
+        
+            <mat-paginator [pageSizeOptions]="[3, 6, 12, 25, 100]" aria-label="Select page of users"></mat-paginator>
             </div>
-            <!-- =========images and desc from backend ============ -->
-            <div class="col-md-8 state-cards">
-                <!--============ mock=========== -->
-
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col">
-                      <div class="card h-100">
-                        <div class="card-img-top img_des1"></div>
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="stars">
-                                <i class="bi bi-star-fill star__color"></i>
-                                <i class="bi bi-star-fill star__color"></i>
-                                <i class="bi bi-star-fill star__color"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="card h-100">
-                        <div class="card-img-top img_des1"></div>
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a short card.</p>
-                        </div>
-
-                        <div class="card-footer">
-                            <div class="stars">
-                                <i class="bi bi-star-fill star__color"></i>
-                                <i class="bi bi-star-fill star__color"></i>
-                                <i class="bi bi-star-fill star__color"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                        </div>
-
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="card h-100">
-                        <div class="card-img-top img_des1"></div>
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-
-                        <div class="card-footer">
-                            <div class="stars">
-                                <i class="bi bi-star-fill star__color"></i>
-                                <i class="bi bi-star-fill star__color"></i>
-                                <i class="bi bi-star-fill star__color"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                        </div>
-
-                      </div>
-                    </div>
-                    <!-- <div class="col">
-                      <div class="card h-100">
-                        <div class="card-img-top img_des1"></div>
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
-                        </div>
-
-                        <div class="card-footer">
-                            <div class="stars">
-                                <i class="bi bi-star-fill star__color"></i>
-                                <i class="bi bi-star-fill star__color"></i>
-                                <i class="bi bi-star-fill star__color"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                        </div>
-
-
-                      </div>
-                    </div> -->
-
-
-                  </div>
-
-
-                <!--============ mock=========== -->
-
-            </div>
-
         </div>
-    </div>
-</div>
+    </div><!-- end of row2 -->
+
+
+</div> <!-- end of conatiner -->
