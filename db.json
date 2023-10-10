@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "image": [
+    {
+      "imageFile": "C:\\fakepath\\lake.jpg",
+      "id": 1
+    }
+  ],
+  "destination": [
+    {
+      "destName": "puri",
+      "destType": "religious",
+      "imageLocation": "odirsa",
+      "stateAndUT": "Orissa",
+      "imageFile": null,
+      "popularityScore": "5",
+      "imageDescription": "a good sea view with temple",
+      "id": 2
+    }
+  ]
+}

@@ -118,6 +118,15 @@
   .state-names::-webkit-scrollbar-corner{
     visibility: hidden;
   }
+  /* =====================turn the selected to white======================== */
+.selected {
+    color: white;
+    background-color: purple;
+}
+  
+li:active {
+    cursor: pointer; 
+  }
 
   /* ==================img card stye =====================*/
 
@@ -211,6 +220,9 @@ select{
     color: black;
 }
 
+.state-name-list li::selection{
+    color: #FFFFFFff;
+}
 
 
 /*style the arrow inside the select element:*/

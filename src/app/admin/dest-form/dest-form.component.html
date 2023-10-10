@@ -1,0 +1,55 @@
+<div class="title"><h1>Destination form</h1></div>
+<form  [formGroup]="destForm" (ngSubmit)="onFormSubmit()">
+<div  mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label >Destination Name</mat-label>
+            <input matInput placeholder="ex: Hawa Mahal" formControlName="destName">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label >Destination Type</mat-label>
+            <input matInput placeholder="ex: Mountain" formControlName="destType">
+            <mat-hint>Hint:sea,Forest,Religious</mat-hint>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+
+        <mat-form-field appearance="outline">
+            <mat-label >Destination Location</mat-label>
+            <input matInput placeholder="ex: Ajmer" formControlName="imageLocation">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>State/UT</mat-label>
+            <mat-select formControlName="stateAndUT">
+              <mat-option *ngFor="let val of stateNames" [value]="val">{{val}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+
+    <div class="row">
+        
+
+        <mat-form-field appearance="outline">
+            <mat-label >Rating</mat-label>
+            <input matInput placeholder="ex: 5" formControlName="popularityScore">
+            <mat-hint>min: 0 max:5</mat-hint>
+        </mat-form-field>
+   
+        
+    </div>
+
+        <mat-form-field class="text-box" appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="describe the place and the experience" formControlName="imageDescription"></textarea>
+        </mat-form-field>  
+</div>
+
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data ? 'update':'save'}}</button>
+</div>
+</form>
+
