@@ -13,7 +13,7 @@ import { CoreService } from '../admin/core/core.service';
 })
 export class LoginComponent {
 
-  loggedIn: boolean = false; // Initialize as false
+  
 
   adminIn:boolean =false;
   loginForm: FormGroup;
@@ -52,7 +52,9 @@ export class LoginComponent {
             // Redirect to the home page 
             this._router.navigate(['/home']);
             //show log out button
-            this.adminIn= true; // Initialize as false
+            this._loginService.adminIn= true; // Initialize as false
+            this._loginService.loggedIn= true;
+           
           }
 
           else{
@@ -61,7 +63,9 @@ export class LoginComponent {
           // Redirect to the home page 
           this._router.navigate(['/home']);
           //show log out button
-          this.loggedIn= true; // Initialize as false
+          this._loginService.adminIn= false;
+          this._loginService.loggedIn= true; // Initialize as false
+         
         }
 
         } 
@@ -70,6 +74,9 @@ export class LoginComponent {
           this._coreService.openSnackBar('Inccorect password!');
           this._dialogRef.close(true);
           this._router.navigate(['/home']);
+          this._loginService.loggedIn= false;
+          this._loginService.adminIn= false;
+         
         }
  
       },
@@ -78,6 +85,7 @@ export class LoginComponent {
         
       }
   });
+ 
   }
   
 

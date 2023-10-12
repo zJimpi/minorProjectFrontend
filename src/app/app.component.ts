@@ -4,6 +4,7 @@ import { SignupComponent } from './signup/signup.component';
 import { Router } from '@angular/router';
 import { CoreService } from './admin/core/core.service';
 import { LoginComponent } from './login/login.component';
+import { LoginServiceService } from './service/login-service.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ export class AppComponent {
 
   constructor(private _dialog: MatDialog,
     private _coreService: CoreService,
-    private _router:Router
+    private _router:Router,
+    private _loginService: LoginServiceService
 
     ){}
 
@@ -46,13 +48,15 @@ export class AppComponent {
       next: (val) => {
         if (val) {
        
-          this.loggedIn = true;
-          console.log('user loged in!');
+          this.adminIn = this._loginService.adminIn;
+          this.loggedIn = this._loginService.loggedIn;
+  
         }
       },
     });
   }
 
+  
   logOut(){
     this.loggedIn = false;
     this._router.navigate(['/home']);

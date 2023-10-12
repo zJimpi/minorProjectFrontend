@@ -121,6 +121,13 @@
       "username": "raju",
       "password": "raju123",
       "id": 1
+    },
+    {
+      "name": "ram",
+      "email": "ram@gmail.com",
+      "username": "ramadmin",
+      "password": "ram123",
+      "id": 2
     }
   ]
 }

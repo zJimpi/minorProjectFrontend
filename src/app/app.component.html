@@ -40,7 +40,7 @@
 
                     <!-- move this to addmin login -->
                     <li class="nav-item">
-                      <a routerLink="admin" routerLinkActive="active" class="nav-link" >Admin Pannel</a>
+                      <a routerLink="admin" routerLinkActive="active" class="nav-link" *ngIf="adminIn">Admin Pannel</a>
                     </li>
                   
                   </ul>
