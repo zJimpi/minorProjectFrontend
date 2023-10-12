@@ -1,14 +1,14 @@
-<div class="title"><h1>Destination form</h1></div>
-<form  [formGroup]="assImgToDestForm" (ngSubmit)="onFormSubmit()">
+<div class="title"><h2>Assign Image to Destination</h2></div>
+<form  [formGroup]="assImgToDestForm" (ngSubmit)="onAssignFormSubmit()">
 <div  mat-dialog-content class="content">
     <div class="row">
         <mat-form-field appearance="outline">
-            <mat-label >Destination Id</mat-label>
+            <mat-label >Image Id</mat-label>
             <input matInput placeholder="ex: 1" formControlName="imgId">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <mat-label >Image Id</mat-label>
+            <mat-label >Destination Id</mat-label>
             <input matInput placeholder="ex: 1" formControlName="destId">
         </mat-form-field>
     </div>

@@ -9,7 +9,7 @@ export class AssImgToDestService {
   constructor(private _http:HttpClient) { }
 
   assImgToDest(iId: number, dId: number, data: any):Observable<any>{
-    return this._http.post(`http://localhost:3000/image/${iId}/toDest/${dId}`,data);
+    return this._http.post(`http://localhost:8086/destination/assImg/${iId}/ToDest/${dId}`,data);
   }
   
 }

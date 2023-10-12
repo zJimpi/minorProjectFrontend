@@ -29,3 +29,9 @@
   /* .image-table{
     height: 140px;
   } */
+
+/* image rezise */
+.image-resize {
+  width: 100px;
+  height: 100px;
+}

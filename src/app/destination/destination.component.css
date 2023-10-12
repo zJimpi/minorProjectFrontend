@@ -65,18 +65,28 @@
   }
 
  .card-start{
-  background-color: rgb(66, 39, 43);
-  border-top-left-radius: 2rem ;
-  border-bottom-left-radius: 2rem;
+  background-color: #FCEFE5ff;
+  border-top-left-radius: 1rem ;
+  border-bottom-left-radius: 1rem;
   width: 50%;
   padding: 10px 0px 10px 0px;
-  background-image: url('asset/Hawamahal.jpg');
   background-clip: content-box;
   border: none;
   background-size: cover;
   height: 300px;
+  overflow: hidden;
+
 
  } 
+ .card-start img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  border-radius: 1rem ;
+  
+}
  .card-box-start{
   display: flex;
   background-color: #FCEFE5ff;
@@ -98,4 +108,10 @@
  margin-bottom: 10px;
  border: none;
  padding-bottom: 15px;
+}
+
+.image-resize{
+
+  height: 100px;
+  width: 100px;
 }

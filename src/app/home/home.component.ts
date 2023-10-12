@@ -1,5 +1,5 @@
 
-import { Component, AfterViewInit, ElementRef, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, OnInit} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 

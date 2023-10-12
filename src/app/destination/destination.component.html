@@ -34,7 +34,7 @@
                     <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide">Image File</th>
                     <td mat-cell *matCellDef="let row" class="card-start">
                       <ng-container *ngIf="row.imageFile">
-                          {{ row.imageFile.name }}
+                          <img [src]="row.imageFile">
                       </ng-container>
                       <ng-container *ngIf="!row.imageFile">
                           No image added

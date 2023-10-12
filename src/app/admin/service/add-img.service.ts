@@ -9,17 +9,17 @@ export class AddImgService {
 
   constructor(private _http:HttpClient) { }
   addImage(data:any):Observable<any>{
-    return this._http.post('http://localhost:3000/image',data);
+    return this._http.post('http://localhost:8086/image',data);
   }
   updateImage(id: number, data: any): Observable<any> {
-    return this._http.put(`http://localhost:3000/image/${id}`, data);
+    return this._http.put(`http://localhost:8086/image/${id}`, data);
   }
 
   getImageList(): Observable<any> {
-    return this._http.get('http://localhost:3000/image');
+    return this._http.get('http://localhost:8086/image/getAllImage');
   }
 
   deleteImage(id: number): Observable<any> {
-    return this._http.delete(`http://localhost:3000/image/${id}`);
+    return this._http.delete(`http://localhost:8086/image/${id}`);
   }
 }

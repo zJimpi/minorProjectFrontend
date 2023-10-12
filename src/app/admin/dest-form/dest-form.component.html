@@ -1,4 +1,9 @@
+<div class="yellow-box">
 <div class="title"><h1>Destination form</h1></div>
+
+<div class="design-box">
+
+
 <form  [formGroup]="destForm" (ngSubmit)="onFormSubmit()">
 <div  mat-dialog-content class="content">
     <div class="row">
@@ -30,7 +35,10 @@
     </div>
 
     <div class="row">
-        
+        <mat-form-field appearance="outline">
+            <mat-label >Image url</mat-label>
+            <input matInput placeholder="ex: /assets/images/kashmir.jpg" formControlName="imageFile">
+        </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label >Rating</mat-label>
@@ -53,3 +61,5 @@
 </div>
 </form>
 
+</div>
+</div>

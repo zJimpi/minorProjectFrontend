@@ -74,7 +74,7 @@ export class DestFormComponent implements OnInit {
       destType:'',
       imageLocation:'',
       stateAndUT:'',
-      imageFile:null,
+      imageFile:'/assets/images/',
       popularityScore:0,
       imageDescription:''
     });

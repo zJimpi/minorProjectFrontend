@@ -38,3 +38,20 @@ p{
   .action button{
     flex: 1;
   }
+
+
+  /* ====desing box==== */
+  .yellow-box{
+    background-color: #076B83ff ;
+    color: #FFFFFFff;
+    background-image: url('asset/destbg.jpg');
+    background-position-y: bottom;
+  }
+  .design-box{
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+    border-radius: 0.5rem;
+  }
+
+ 

@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginServiceService } from '../service/login-service.service';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { CoreService } from '../admin/core/core.service';
 
 @Component({
   selector: 'app-login',
@@ -9,35 +13,85 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  username: string="";
-  password: string="";
+  loggedIn: boolean = false; // Initialize as false
 
-  constructor(private http:HttpClient,private router:Router){}
+  adminIn:boolean =false;
+  loginForm: FormGroup;
 
-  login(){
+  constructor(private _fb:FormBuilder,
+    private _loginService: LoginServiceService,
+    private _dialogRef: MatDialogRef<LoginComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private _coreService: CoreService,
+    private _router:Router
 
-    let bodyData ={
-      "userName":this.username,
-      "password":this.password
-    };
-    this.http.post("http://localhost:8086/user/login", bodyData, {responseType : 'text'}).subscribe((resultData:any)=>
-    {
-      
-      if(resultData.message == "Email not exits")
-      {
-        alert("email doesn't exist");
+    ){
+
+    this.loginForm=this._fb.group({
+
+      username:'',
+      password:'',
+    });
+  }
+
+  onLogin(){
+    
+    this._loginService.getuser().subscribe({
+      next:(userDetails: any) => {
+
+        const user = userDetails.find((a:any)=>{
+          return a.username === this.loginForm.value.username && a.password === this.loginForm.value.password
+        });
+
+        if (user) {
+
+          if(this.checkAdmin(user.username))
+          {
+            this._coreService.openSnackBar(' Admin logged in succesfully');
+            this._dialogRef.close(true);
+            // Redirect to the home page 
+            this._router.navigate(['/home']);
+            //show log out button
+            this.adminIn= true; // Initialize as false
+          }
+
+          else{
+          this._coreService.openSnackBar('logged in succesfully');
+          this._dialogRef.close(true);
+          // Redirect to the home page 
+          this._router.navigate(['/home']);
+          //show log out button
+          this.loggedIn= true; // Initialize as false
+        }
+
+        } 
+        else {
+          // Password is incorrect or user not found
+          this._coreService.openSnackBar('Inccorect password!');
+          this._dialogRef.close(true);
+          this._router.navigate(['/home']);
+        }
+ 
+      },
+      error: (err: any) => {
+        console.error(err);
+        
       }
-      else if(resultData.message == "Login Success"){
+  });
+  }
+  
 
-        this.router.navigateByUrl('/home');
-      }
-      else{
-        alert("inncorect email and password")
-      }
-
-
-
+  checkAdmin(username: string): boolean {
+    if(username.endsWith('admin')){
+      return true;
     }
-    );
+     // Example: Admin emails end with "@admin.com"
+
+    return false;
+  }
+
+
+  onlogout(){
+    this._router.navigate(['/home']);
   }
 }

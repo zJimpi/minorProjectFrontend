@@ -23,12 +23,12 @@ export class AssImageToDestFormComponent {
     ){
 
       this.assImgToDestForm = this._fb.group({
-        imgId:0,
-        destId:0
+        imgId:null,
+        destId:null
       });
     }
   //on submitting the form
-  onFormSubmit(){
+  onAssignFormSubmit(){
     if (this.assImgToDestForm.valid) {
       this._assignService.assImgToDest(this.data.imgId, this.data.destId,this.assImgToDestForm.value)
       .subscribe({

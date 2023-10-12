@@ -1,23 +1,33 @@
-<div class="peacock_box">
-    <div class="space"></div>
-<div class="container">
-    <form>
- 
-        <div class="form-group">
-            <label>User Name</label>
-            <input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" id="username" class="form-control" placeholder="Enter User Name">
-        </div>
+<div class="yellow-box">
+    <div class="title"><h1>Login to your Account</h1></div>
+    <div class="sub-title"><h5>Explore Travel destination</h5></div>
+    <div class="peacock-box"> 
+<div class="container design-box">
     
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" id="password" class="form-control" placeholder="Enter password">
-        </div>
+    <form  [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div  mat-dialog-content class="content">
     
-        <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
-        <div>
-            <small>Don't have an account? Sign up</small> 
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label >User Name</mat-label>
+                <input #username matInput placeholder="ex: itsRaju" formControlName="username">
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label >Password</mat-label>
+                <input #password matInput placeholder="******" formControlName="password">
+            </mat-form-field>
         </div>
+         
+    </div>
+    
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">Login</button>
+    </div>
     </form>
+
+</div>
 </div>
 </div>
 

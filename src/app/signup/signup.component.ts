@@ -1,5 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component,Inject } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { LoginServiceService } from '../service/login-service.service';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { CoreService } from '../admin/core/core.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,26 +12,36 @@ import { Component } from '@angular/core';
 })
 export class SignupComponent {
 
-  name: string="";
-  email: string="";
-  username: string="";
-  password: string="";
 
-  constructor(private http:HttpClient){}
+  signupForm: FormGroup;
 
-  save(){
+  constructor(private _fb:FormBuilder,
+    private _loginService: LoginServiceService,
+    private _dialogRef: MatDialogRef<SignupComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private _coreService: CoreService
 
-    let bodyData ={
-      "name" : this.name,
-      "email":this.email,
-      "userName":this.username,
-      "password":this.password
-    };
-    this.http.post("http://localhost:8086/user/save", bodyData, {responseType : 'text'}).subscribe((resultData:any)=>
-    {
-      console.log(resultData);
-      alert("user registered successfully!");
+    ){
+
+    this.signupForm=this._fb.group({
+      name:'', 
+      email:'',
+      username:'',
+      password:'',
+    });
+  }
+
+  onSignup(){
+    if(this.signupForm.valid){
+      this._loginService.adduser(this.signupForm.value).subscribe({
+        next: (val :any)=>{
+          this._coreService.openSnackBar('Resigter susessfully!');
+          this._dialogRef.close(true);
+        },
+        error: (err:any)=>{
+          console.error(err);
+        }
+      });
     }
-    );
   }
 }

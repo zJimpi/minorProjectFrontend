@@ -28,7 +28,7 @@
       "destType": "heritage",
       "imageLocation": "jaipur",
       "stateAndUT": "Rajasthan",
-      "imageFile": "C:\\fakepath\\seabeach.jpg",
+      "imageFile": "/assets/images/kashmir.jpg",
       "popularityScore": "5",
       "imageDescription": "yaphk dhblmd zum uryg mwse jgqoaz mvfzsgl jzi sv on f dgh omau kwafrk hwualp",
       "id": 1
@@ -38,7 +38,7 @@
       "destType": "sea",
       "imageLocation": "odisa",
       "stateAndUT": "Orissa",
-      "imageFile": "C:\\fakepath\\seabeach.jpg",
+      "imageFile": "/assets/images/rajasthan.jpg",
       "popularityScore": "5",
       "imageDescription": "yaphk dhblmd zum uryg mwse jgqoaz mvfzsgl jzi sv on f dgh omau kwafrk hwualp",
       "id": 2
@@ -58,7 +58,7 @@
       "destType": "mountain",
       "imageLocation": "uk",
       "stateAndUT": "Uttarakhand",
-      "imageFile":"C:\\fakepath\\seabeach.jpg",
+      "imageFile": "C:\\fakepath\\seabeach.jpg",
       "popularityScore": "4",
       "imageDescription": "a nice place in the middle of mountains",
       "id": 4
@@ -102,6 +102,25 @@
       "popularityScore": "2",
       "imageDescription": "description of the place",
       "id": 8
+    },
+    {
+      "destName": "taj mahal",
+      "destType": "heritage",
+      "imageLocation": "agra",
+      "stateAndUT": "Delhi",
+      "imageFile": "/assets/images/tajmahal.jpg",
+      "popularityScore": "5",
+      "imageDescription": "one of the wonders of the world",
+      "id": 9
+    }
+  ],
+  "user": [
+    {
+      "name": "raju",
+      "email": "raju@gmail.com",
+      "username": "raju",
+      "password": "raju123",
+      "id": 1
     }
   ]
 }
