@@ -16,9 +16,17 @@
   "profile": {
     "name": "typicode"
   },
-
   "destination": [
-    
+    {
+      "destName": "Taj Mahal",
+      "destType": "Heritage",
+      "imageLocation": "Agra",
+      "stateAndUT": "Delhi",
+      "imageFile": "/assets/images/Anini4.jpg",
+      "popularityScore": "5",
+      "imageDescription": "The Taj Mahal is an ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor, Shah Jahan (reigned from 1628 to 1658), to house the tomb of his favourite wife, Mumtaz Mahal.",
+      "id": 1
+    }
   ],
   "user": [
     {
@@ -34,6 +42,13 @@
       "username": "ramadmin",
       "password": "ram123",
       "id": 2
+    },
+    {
+      "name": "Sangita Das",
+      "email": "sangita@gmail.com",
+      "username": "DSangitaadmin",
+      "password": "iamauser",
+      "id": 3
     }
   ]
 }
