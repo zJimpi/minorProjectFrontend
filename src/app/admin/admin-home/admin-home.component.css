@@ -6,6 +6,7 @@
 }
 .card-body{
     margin: 20px;
+    
 }
 .nav{
     margin-top: 50px;
@@ -18,4 +19,7 @@
 }
 h1{
     text-align: center;
+}
+.card{
+    background-color: #FCEFE5ff;
 }

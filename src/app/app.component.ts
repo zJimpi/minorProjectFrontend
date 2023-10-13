@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, ElementRef } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { AfterViewInit, Component, ElementRef, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { SignupComponent } from './signup/signup.component';
 import { Router } from '@angular/router';
 import { CoreService } from './admin/core/core.service';
@@ -20,6 +20,7 @@ export class AppComponent {
   constructor(private _dialog: MatDialog,
     private _coreService: CoreService,
     private _router:Router,
+   
     private _loginService: LoginServiceService
 
     ){}
@@ -59,7 +60,9 @@ export class AppComponent {
   
   logOut(){
     this.loggedIn = false;
+    this.adminIn=false;
     this._router.navigate(['/home']);
+
   }
 
 }

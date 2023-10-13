@@ -18,6 +18,9 @@ export class AddImgService {
   getImageList(): Observable<any> {
     return this._http.get('http://localhost:8086/image/getAllImage');
   }
+  getImageByname(name:string): Observable<any>{
+    return this._http.get(`http://localhost:8086/image/${name}`);
+  }
 
   deleteImage(id: number): Observable<any> {
     return this._http.delete(`http://localhost:8086/image/${id}`);

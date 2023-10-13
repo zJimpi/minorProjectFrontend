@@ -33,6 +33,7 @@ import { ImageFormComponent } from './admin/image-form/image-form.component';
 import { AddImageComponent } from './admin/add-image/add-image.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AssImageToDestFormComponent } from './admin/ass-image-to-dest-form/ass-image-to-dest-form.component';
+import { MajorprojectComponent } from './majorproject/majorproject.component';
 
 
 
@@ -50,6 +51,7 @@ import { AssImageToDestFormComponent } from './admin/ass-image-to-dest-form/ass-
     AddImageComponent,
     AdminHomeComponent,
     AssImageToDestFormComponent,
+    MajorprojectComponent,
  
  
   ],

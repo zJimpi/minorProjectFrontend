@@ -43,4 +43,13 @@ export class HomeComponent implements AfterViewInit, OnInit{
     window.scrollTo(0, 0);
     this.router.navigate(['/destination']);
   }
+
+
+
+  openMajorProject(){
+    this.router.navigate(['/majorProject']);
+  }
+
+
+  
 }

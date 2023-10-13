@@ -168,6 +168,13 @@
     background-position: center;
     height: 20rem;
 }
+
+.card-footer{
+border: none;
+text-align: center;
+background: none;
+padding-bottom: 10px;
+}
 /*================ responsive======================= */
 /* text will be 90px from screen size 0-767 */
 @media (max-width:767px) {
