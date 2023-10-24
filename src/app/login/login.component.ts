@@ -102,4 +102,6 @@ export class LoginComponent {
   onlogout(){
     this._router.navigate(['/home']);
   }
+
+  hide = true;
 }
