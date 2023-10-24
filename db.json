@@ -16,24 +16,10 @@
   "profile": {
     "name": "typicode"
   },
-
   "destination": [
-    
+  
   ],
   "user": [
-    {
-      "name": "raju",
-      "email": "raju@gmail.com",
-      "username": "raju",
-      "password": "raju123",
-      "id": 1
-    },
-    {
-      "name": "ram",
-      "email": "ram@gmail.com",
-      "username": "ramadmin",
-      "password": "ram123",
-      "id": 2
-    }
+  
   ]
 }
