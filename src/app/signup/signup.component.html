@@ -18,7 +18,7 @@
                                 <small>Minimun 2 charecters are required.</small>
                             </mat-hint>
                             <mat-hint style = "color: red;" *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.errors?.['pattern']">
-                                <small>Name should start with a letter.</small>
+                                <small>Name should not contain number</small>
                             </mat-hint>
                         </mat-form-field>
 
