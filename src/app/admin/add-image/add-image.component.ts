@@ -5,8 +5,8 @@ import { CoreService } from '../core/core.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { ImageFormComponent } from '../image-form/image-form.component';
-import { AssImageToDestFormComponent } from '../ass-image-to-dest-form/ass-image-to-dest-form.component';
+
+
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -56,20 +56,7 @@ export class AddImageComponent {
 
   }
 
-  //   //Gets called when the user clicks on retieve image button to get the image from back end
-  //   getImage() {
-  //   //Make a call to Spring Boot to get the Image Bytes.
-  //   this.httpClient.get('http://localhost:8086/image/' + this.imageName, { responseType: 'blob' })
-  //     .subscribe(
-  //       res => {
-  //         this.retrieveResonse = res;
-  //         this.base64Data = this.retrieveResonse.picByte;
-  //         this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
-  //       }
-  //     );
-  // }
-
-  // code by chatgpt
+ 
 
 
   getImage() {

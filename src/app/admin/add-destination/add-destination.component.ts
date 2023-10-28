@@ -6,8 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { CoreService } from '../core/core.service';
 import { AddDestService } from '../service/add-dest.service';
-import { ImageFormComponent } from '../image-form/image-form.component';
-import { AddImgService } from '../service/add-img.service';
+
 
 @Component({
   selector: 'app-add-destination',

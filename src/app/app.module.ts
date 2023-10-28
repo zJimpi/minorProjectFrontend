@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DestinationComponent } from './destination/destination.component';
-import { ImageComponent } from './image/image.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,10 +28,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AddDestinationComponent } from './admin/add-destination/add-destination.component';
 import { DestFormComponent } from './admin/dest-form/dest-form.component';
-import { ImageFormComponent } from './admin/image-form/image-form.component';
+
 import { AddImageComponent } from './admin/add-image/add-image.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
-import { AssImageToDestFormComponent } from './admin/ass-image-to-dest-form/ass-image-to-dest-form.component';
 import { MajorprojectComponent } from './majorproject/majorproject.component';
 
 
@@ -42,15 +40,13 @@ import { MajorprojectComponent } from './majorproject/majorproject.component';
     AppComponent,
     HomeComponent,
     DestinationComponent,
-    ImageComponent,
     LoginComponent,
     SignupComponent,
     AddDestinationComponent,
     DestFormComponent,
-    ImageFormComponent,
     AddImageComponent,
     AdminHomeComponent,
-    AssImageToDestFormComponent,
+
     MajorprojectComponent,
  
  
