@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginServiceService } from '../service/login-service.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
@@ -29,8 +29,8 @@ export class LoginComponent {
 
     this.loginForm=this._fb.group({
 
-      username:'',
-      password:'',
+      username:['',Validators.required],
+      password:['',Validators.required],
     });
   }
 

@@ -10,22 +10,54 @@
                         <mat-form-field appearance="outline">
                             <mat-label >Name</mat-label>
                             <input matInput placeholder="ex: Raju" formControlName="name">
+
+                            <mat-hint style = "color: red;" *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.errors?.['required']">
+                                <small>Name is required.</small>
+                            </mat-hint>
+                            <mat-hint style = "color: red;" *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.errors?.['minlength']">
+                                <small>Minimun 2 charecters are required.</small>
+                            </mat-hint>
+                            <mat-hint style = "color: red;" *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.errors?.['pattern']">
+                                <small>Name should start with a letter.</small>
+                            </mat-hint>
                         </mat-form-field>
 
                         <mat-form-field appearance="outline">
                             <mat-label >Email Id</mat-label>
                             <input matInput placeholder="ex: raju@gmail.com" formControlName="email">
+                            <mat-hint style = "color: red;" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.errors?.['required']">
+                                <small>Email is required.</small>
+                            </mat-hint>
+
+                            <mat-hint style = "color: red;" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.errors?.['email']">
+                                <small>Enter valid Email Id.</small>
+                            </mat-hint>
+                            
                         </mat-form-field>
+                    
                     </div>
                     <div class="row">
                         <mat-form-field appearance="outline">
                             <mat-label >User Name</mat-label>
                             <input matInput placeholder="ex: itsRaju" formControlName="username">
+                            
+                            <mat-hint style = "color: red;" *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.errors?.['required']">
+                                <small>Username is required.</small>
+                            </mat-hint>
+                            <mat-hint style = "color: red;" *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.errors?.['minlength']">
+                                <small>Minimun 2 charecters are required.</small>
+                            </mat-hint>
                         </mat-form-field>
 
                         <mat-form-field appearance="outline">
                             <mat-label >Password</mat-label>
                             <input matInput placeholder="use strong pasword" formControlName="password" [type]="hide ? 'password' : 'text'">
+                            <mat-hint style = "color: red;" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['required']">
+                                <small>password is required.</small>
+                            </mat-hint>
+                            <mat-hint style = "color: red;" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['minlength']">
+                                <small>Minimun 8 charecters are required.</small>
+                            </mat-hint>
                         </mat-form-field>
                     </div>
      

@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component,Inject } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginServiceService } from '../service/login-service.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CoreService } from '../admin/core/core.service';
+import { ErrorStateMatcher } from '@angular/material/core';
 
 @Component({
   selector: 'app-signup',
@@ -24,10 +25,10 @@ export class SignupComponent {
     ){
 
     this.signupForm=this._fb.group({
-      name:'', 
-      email:'',
-      username:'',
-      password:'',
+      name:['', [Validators.required,Validators.minLength(2),Validators.pattern("[a-zA-Z].*")]], 
+      email:['', [Validators.required, Validators.email]],
+      username:['', [Validators.required,Validators.minLength(2)]],
+      password:['', [Validators.required,Validators.minLength(8)]]
     });
   }
 
@@ -46,4 +47,7 @@ export class SignupComponent {
   }
 
   hide = true;
+  //custom validators
+
+
 }
