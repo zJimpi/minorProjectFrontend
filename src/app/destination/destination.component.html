@@ -17,78 +17,101 @@
 
             <mat-form-field>
             <mat-label>Filter your Search (eg: Mountain, Assam, Taj Mahal)</mat-label>
-            <input matInput (keyup)="applyFilter($event)"  #input>
+            <input matInput >
             </mat-form-field>
         
             <div class="table-container">
-            <table mat-table [dataSource]="dataSource" matSort class="table-card">
-        
-                <!-- ID Column -->
-                <ng-container matColumnDef="id" class="hide">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide"> ID </th>
-                <td mat-cell *matCellDef="let row" class="hide"> {{row.id}} </td>
-                </ng-container>
-                
-                <!-- image colum -->
-                <ng-container matColumnDef="imageFile">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide">Image File</th>
-                    <td mat-cell *matCellDef="let row" class="card-start">
-                      <ng-container *ngIf="row.imageFile">
-                          <img [src]="row.imageFile">
-                      </ng-container>
-                      <ng-container *ngIf="!row.imageFile">
-                          No image added
-                      </ng-container>
-                    </td>
-                </ng-container>
-              
-                <!-- .... -->
-        
-                <!-- Destiantion  -->
-                <ng-container matColumnDef="destName" >
-                <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide"> Destination Name </th>
-                <td mat-cell *matCellDef="let row" class="card-box-start"> <h5><b>{{row.destName}}</b></h5> </td>
-                </ng-container>
-        
 
-        
-                <ng-container matColumnDef="imageLocation">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide"> Location </th>
-                <td mat-cell *matCellDef="let row" class="card-box"> <h6>LOCATION: {{row.imageLocation}}</h6></td>
-                </ng-container>
-        
-                <ng-container matColumnDef="stateAndUT">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide"> state And UT </th>
-                <td mat-cell *matCellDef="let row" class="card-box"> <h6>STATE: {{row.stateAndUT}}</h6></td>
-                </ng-container>
+              <div class="card mb-3" style="width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-4 img1">
+                    <img src="" class="img-fluid rounded-start " >
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="card-title"><i class="bi bi-geo-alt-fill"></i><b>Srirangam</b></h4>
+                      <h6 class="card-text"><b>Type:</b>Temple</h6>
+                      <h6 class="card-text"><b>Location:</b>Tiruchirappalli</h6>
+                      <h6 class="card-text"><b>State:</b> Tamil Nadu</h6>
+                      <p class="card-text"><b> Description:</b> Srirangam is the foremost of the eight self-manifested shrines (Swayam Vyakata Kshetras ) of Lord Vishnu. Sri Renganatha Swamy temple, established in a 156 acre land, is a great vaishnavite temple dedicated to Lord Vishnu. It is also considered the first, foremost and the most important of the 108 main Vishnu temples. </p>
+                      <p class="card-text"><b>Rating:</b> 4.8 out of 5 </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-                <ng-container matColumnDef="destType">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide"> Destination Type </th>
-                  <td mat-cell *matCellDef="let row" class="card-box"><h6>TYPE: {{row.destType}}</h6></td>
-                </ng-container>
+              <div class="card mb-3" style="width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-4 img2">
+                    <img src="" class="img-fluid rounded-start " >
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="card-title"><i class="bi bi-geo-alt-fill"></i><b>Gulmarg</b></h4>
+                      <h6 class="card-text"><b>Type:</b>Mountain</h6>
+                      <h6 class="card-text"><b>Location:</b>Gulmarg</h6>
+                      <h6 class="card-text"><b>State:</b> Jammu and Kashmir</h6>
+                      <p class="card-text"><b> Description:</b> Surrounded by snow-covered lofty Himalayas, meadows of flowers, deep ravines, evergreen forested valleys, Gulmarg also has the world's second-highest Gondola ride. Gulmarg has also been developed as an adventure hub as the Indian Institute of Skiing, and Mountaineering is located here. </p>
+                      <p class="card-text"><b>Rating:</b> 4.6 out of 5 </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+              <div class="card mb-3" style="width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-4 img3">
+                    <img src="" class="img-fluid rounded-start " >
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="card-title"><i class="bi bi-geo-alt-fill"></i><b>Palak Lake</b></h4>
+                      <h6 class="card-text"><b>Type:</b>Lake</h6>
+                      <h6 class="card-text"><b>Location:</b>Mizoram</h6>
+                      <h6 class="card-text"><b>State:</b> Mizoram</h6>
+                      <p class="card-text"><b> Description:</b> Palak lake is the largest lake in Mizoram and most famous landmark of Mara Autonomous District Council. The local people call it Pala Tipa. Surrounded by lush green forests and mountains, it is home to a range of animals, birds, amphibians and reptiles. </p>
+                      <p class="card-text"><b>Rating:</b> 4.0 out of 5 </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-        
-                <ng-container matColumnDef="imageDescription">
-                <th mat-header-cell *matHeaderCellDef class="hide">Description </th>
-                <td mat-cell *matCellDef="let row" class="card-box" height="150px" >DESCRIPTION: {{row.imageDescription}}</td>
-                </ng-container>
-        
-                <ng-container matColumnDef="popularityScore">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="hide"> Rating </th>
-                  <td mat-cell *matCellDef="let row" class="card-end"> RATING: {{row.popularityScore}}  out of 5</td>
-                </ng-container>
+              <div class="card mb-3" style="width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-4 img4">
+                    <img src="" class="img-fluid rounded-start " >
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="card-title"><i class="bi bi-geo-alt-fill"></i><b>Shimla</b></h4>
+                      <h6 class="card-text"><b>Type:</b>Mountain</h6>
+                      <h6 class="card-text"><b>Location:</b>Shimla</h6>
+                      <h6 class="card-text"><b>State:</b> Himachal Pradesh</h6>
+                      <p class="card-text"><b> Description:</b> Evergreen forests, rolling valleys, breathtaking lakes and the pleasant Shimla weather are only a few reasons that lend this hill station a unique charm. No doubt, the places to visit in Shimla will leave you with memories of a lifetime. </p>
+                      <p class="card-text"><b>Rating:</b> 4.7 out of 5 </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-        
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        
-                <!-- Row shown when there is no matching data. -->
-                <tr class="mat-row" *matNoDataRow>
-                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-                </tr>
-            </table>
-        
+              <div class="card mb-3" style="width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-4 img5">
+                    <img src="" class="img-fluid rounded-start " >
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="card-title"><i class="bi bi-geo-alt-fill"></i><b>Neermahal</b></h4>
+                      <h6 class="card-text"><b>Type:</b>Heritage</h6>
+                      <h6 class="card-text"><b>Location:</b>Rudijala</h6>
+                      <h6 class="card-text"><b>State:</b> Tripura</h6>
+                      <p class="card-text"><b> Description:</b> Neermahal also known as Twijilikma Nuyung is a former royal palace of Tripura Kingdom, built by Maharaja Bir Bikram Kishore Manikya bahadur in 1930. It is also the largest water palace in India. </p>
+                      <p class="card-text"><b>Rating:</b> 4.8 out of 5 </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+     
             <mat-paginator [pageSizeOptions]="[5, 10, 15, 25, 100]" aria-label="Select page of users"></mat-paginator>
             </div>
         </div>

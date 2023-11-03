@@ -126,3 +126,34 @@
   
 
 }
+
+.img1{
+  background-image: url('asset/Srirangam.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 20rem;
+}
+.img2{
+  background-image: url('asset/Gulmarg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 20rem;
+}
+.img3{
+  background-image: url('asset/PalakLake.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 20rem;
+}
+.img4{
+  background-image: url('asset/Shimla.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 20rem;
+}
+.img5{
+  background-image: url('asset/Neermahal.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 20rem;
+}

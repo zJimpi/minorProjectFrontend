@@ -28,6 +28,11 @@ export class AppComponent {
 
     ){}
 
+
+  refreshPageWithReload() {
+      location.reload(); // Reload the current page
+    }
+
   openSignupForm(){
     //open by component
     const dialogRef = this._dialog.open(SignupComponent)
