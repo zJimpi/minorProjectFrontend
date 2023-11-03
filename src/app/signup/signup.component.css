@@ -66,3 +66,19 @@
   h1{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
+
+  /* //responsive */
+  @media (max-width: 768px){
+    .yellow-box{
+      height: 600px;
+      
+    }
+    .design-box{
+      padding: 10px;
+      margin-top: 50px;
+     
+     
+    }
+    
+  
+  }
