@@ -35,6 +35,7 @@ import { MajorprojectComponent } from './majorproject/majorproject.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +71,8 @@ import { MajorprojectComponent } from './majorproject/majorproject.component';
     MatPaginatorModule,
     MatSortModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    
 
 
   ],

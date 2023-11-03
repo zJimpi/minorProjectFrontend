@@ -9,33 +9,15 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements AfterViewInit, OnInit{
+export class HomeComponent {
 
   constructor(
-    private route: ActivatedRoute, 
-    private elementRef: ElementRef,
-    private router: Router
+     private router: Router
     ) {}
 
-  ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const scrollTo = params.get('scrollTo');
-      if (scrollTo === 'popular') {
-        this.scrollToPopularSection();
-      }
-    });
-  }
 
-  ngAfterViewInit(): void {
-    // You can perform additional initialization here
-  }
 
-  private scrollToPopularSection() {
-    const popularSection = this.elementRef.nativeElement.querySelector('#popular');
-    if (popularSection) {
-      popularSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
+
 
 
   //button shoul navigate to ddestination component

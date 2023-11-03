@@ -63,56 +63,8 @@ li{
     overflow-y: hidden;
 }
 
-/* modale */
-.modal-title{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #076B83ff ;
-    text-align: center;
-   
-    
-}
-.modal-header{
-    display: flex;
-   justify-content: center;
-   padding-bottom: 0;
-   padding-top: 0;
-   border: none;
-  
-}
 
-.modal-content{
-    background-color: #FCEFE5ff;
 
-}
-.modal-header .subtitle{
-    padding-left: 5px;
-    margin-top: 0;
-    padding-top: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.modal-header .title{
-    padding-top: 16px;
-    padding-left: 45px;
-}
-.title_login{
-    padding-top: 16px;
-    padding-left: 26px;
-}
-/* heading responsive ness */
-
-/* 
-@media (min-width:935px){
-    .modal-header .title{
-        padding-left: 75px;
-    }
-
-}
-@media (min-width:1024px){
-    .modal-header .title{
-        padding-left: 60px;
-    }
-
-} */
 
 .space{
     width: 100%;
@@ -129,6 +81,8 @@ li{
     right: 10px;
 }
 
+
+
 .container{
     padding-bottom: 37px;
 }
@@ -142,3 +96,44 @@ li{
 .mat-mdc-raised-button.mat-unthemed {
     --mdc-protected-button-container-color: rgba(0, 0, 0, 0.04);
 }
+
+
+
+/* new toggle css */
+
+/*============== colaspes style============== */
+@media (max-width: 768px){
+    .space{
+        width: 0%;
+        height: 90px;
+    
+    }
+    /* login */
+    .right-start ul {
+       
+        position: absolute;
+        left: 10px;
+        top: 90px;
+    }
+
+    .right-start ul li button {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+        text-decoration: none;
+        
+      }
+      
+
+    /* destiantion */
+    .left-start ul {
+        position: absolute;
+        left: 10px;
+        top: 45px;
+     }
+
+
+  
+  }

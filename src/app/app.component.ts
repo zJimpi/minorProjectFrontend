@@ -14,6 +14,9 @@ import { LoginServiceService } from './service/login-service.service';
 export class AppComponent {
   title = 'Wander Quest';
 
+ 
+
+
   loggedIn:boolean =false;
   adminIn:boolean = false;
 
@@ -64,5 +67,9 @@ export class AppComponent {
     this._router.navigate(['/home']);
 
   }
+
+
+  
+
 
 }
