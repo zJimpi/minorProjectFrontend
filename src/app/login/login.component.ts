@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginServiceService } from '../service/login-service.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { CoreService } from '../admin/core/core.service';
+import { CoreService } from '../service/core.service';
 
 @Component({
   selector: 'app-login',

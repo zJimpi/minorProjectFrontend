@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { SignupComponent } from './signup/signup.component';
 import { Router } from '@angular/router';
-import { CoreService } from './admin/core/core.service';
+import { CoreService } from './service/core.service';
 import { LoginComponent } from './login/login.component';
 import { LoginServiceService } from './service/login-service.service';
 

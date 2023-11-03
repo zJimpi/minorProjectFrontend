@@ -26,11 +26,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { AddDestinationComponent } from './admin/add-destination/add-destination.component';
-import { DestFormComponent } from './admin/dest-form/dest-form.component';
-
-import { AddImageComponent } from './admin/add-image/add-image.component';
-import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+;
 import { MajorprojectComponent } from './majorproject/majorproject.component';
 
 
@@ -43,10 +39,7 @@ import { MajorprojectComponent } from './majorproject/majorproject.component';
     DestinationComponent,
     LoginComponent,
     SignupComponent,
-    AddDestinationComponent,
-    DestFormComponent,
-    AddImageComponent,
-    AdminHomeComponent,
+
 
     MajorprojectComponent,
  

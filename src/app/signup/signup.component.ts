@@ -3,7 +3,7 @@ import { Component,Inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginServiceService } from '../service/login-service.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { CoreService } from '../admin/core/core.service';
+import { CoreService } from '../service/core.service';
 import { ErrorStateMatcher } from '@angular/material/core';
 
 @Component({
